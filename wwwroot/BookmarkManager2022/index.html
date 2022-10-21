@@ -271,9 +271,9 @@
                             let bookmark = bookmarkFromForm();
                             if (bookmark) {
                                 if (createMode)
-                                    POST(bookmark, refreshBookmarksList, error);
+                                    POST(bookmark, getBookmarksList, error);
                                 else
-                                    PUT(bookmark, refreshBookmarksList, error);
+                                    PUT(bookmark, getBookmarksList, error);
                                 resetBookmarkForm();
                                 holdCheckETag = false;
                                 $(this).dialog("close");
@@ -304,7 +304,7 @@
                         click: function () {
                             holdCheckETag = false;
                             if (bookmarkIdToDelete)
-                                DELETE(bookmarkIdToDelete, refreshBookmarksList, error);
+                                DELETE(bookmarkIdToDelete, getBookmarksList, error);
                             bookmarkIdToDelete = 0;
                             $(this).dialog("close");
                         }
